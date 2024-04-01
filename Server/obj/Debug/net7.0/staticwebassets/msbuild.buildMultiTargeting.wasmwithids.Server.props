@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/wasmwithids.Server.props" />
+</Project>
