@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wasmwithids.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c464989be165118e8361abe9ac115250b512f2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("wasmwithids.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wasmwithids.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
