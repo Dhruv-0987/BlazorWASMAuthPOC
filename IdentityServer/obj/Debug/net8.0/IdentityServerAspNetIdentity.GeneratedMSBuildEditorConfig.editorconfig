@@ -9,115 +9,115 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IdentityServerAspNetIdentity
 build_property.RootNamespace = IdentityServerAspNetIdentity
-build_property.ProjectDir = /Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/
+build_property.ProjectDir = /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity
+build_property.MSBuildProjectDirectory = /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Account/AccessDenied.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9BY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Account/Login/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Account/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dpbi9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Account/Logout/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Account/Logout/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dvdXQvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Account/Logout/LoggedOut.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Account/Logout/LoggedOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dvdXQvTG9nZ2VkT3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Ciba/All.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Ciba/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2liYS9BbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Ciba/Consent.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Ciba/Consent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2liYS9Db25zZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Ciba/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Ciba/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2liYS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Ciba/_ScopeListItem.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Ciba/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2liYS9fU2NvcGVMaXN0SXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Consent/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Consent/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc2VudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Consent/_ScopeListItem.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Consent/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc2VudC9fU2NvcGVMaXN0SXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Device/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Device/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV2aWNlL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Device/Success.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Device/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV2aWNlL1N1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Device/_ScopeListItem.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Device/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV2aWNlL19TY29wZUxpc3RJdGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Diagnostics/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Diagnostics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGlhZ25vc3RpY3MvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/ExternalLogin/Callback.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/ExternalLogin/Callback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXh0ZXJuYWxMb2dpbi9DYWxsYmFjay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/ExternalLogin/Challenge.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/ExternalLogin/Challenge.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXh0ZXJuYWxMb2dpbi9DaGFsbGVuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Grants/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Grants/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR3JhbnRzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Home/Error/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Home/Error/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS9FcnJvci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Redirect/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Redirect/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVkaXJlY3QvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/ServerSideSessions/Index.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/ServerSideSessions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmVyU2lkZVNlc3Npb25zL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Shared/_Layout.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Shared/_Nav.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Shared/_Nav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19OYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/Shared/_ValidationSummary.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/Shared/_ValidationSummary.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU3VtbWFyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/_ViewImports.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/Pages/_ViewStart.cshtml]
+[/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

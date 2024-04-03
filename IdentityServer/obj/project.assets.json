@@ -5339,11 +5339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/IdentityServerAspNetIdentity.csproj",
+      "projectUniqueName": "/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/IdentityServerAspNetIdentity.csproj",
       "projectName": "IdentityServerAspNetIdentity",
-      "projectPath": "/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/IdentityServerAspNetIdentity.csproj",
+      "projectPath": "/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/IdentityServerAspNetIdentity.csproj",
       "packagesPath": "/Users/dhruvmathur/.nuget/packages/",
-      "outputPath": "/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/obj/",
+      "outputPath": "/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/dhruvmathur/.nuget/NuGet/NuGet.Config"

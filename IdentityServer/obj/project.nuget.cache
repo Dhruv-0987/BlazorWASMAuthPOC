@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "98UjycZSRFWnbWFKRdRhYRoVSLznQaC+MePCJPT4ifsAroK7Hmh6vSwm744iCfSep2PE7DZcPMnDrOw0oryCdw==",
+  "dgSpecHash": "ZT59DrDbY1cGrws1crgQPDuTN1pREDocux5zijdWqBDkeN6T2tywISmBi5zqvXz8YOc1peQAd1CGOY94MilgHQ==",
   "success": true,
-  "projectFilePath": "/Users/dhruvmathur/personal projects/BlazorIDSDemoCOde/IdentityServerAspNetIdentity/IdentityServerAspNetIdentity.csproj",
+  "projectFilePath": "/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/IdentityServerAspNetIdentity.csproj",
   "expectedPackageFiles": [
     "/Users/dhruvmathur/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
