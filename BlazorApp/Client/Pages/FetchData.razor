@@ -1,0 +1,49 @@
+﻿@page "/fetchdata"
+@using wasmwithids.Shared
+@inject HttpClient Http
+
+<PageTitle>Product list</PageTitle>
+
+<h1>Product list</h1>
+
+<p>This component demonstrates fetching data from an external server.</p>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>SubCategory</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Category</td>
+                    <td>@product.SubCategory</td>
+                    <td>@product.PricePerUnit</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Product> products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<List<Product>>("/api/bff/products");
+    }
+}
