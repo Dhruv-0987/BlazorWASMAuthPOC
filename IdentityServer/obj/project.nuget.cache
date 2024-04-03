@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZT59DrDbY1cGrws1crgQPDuTN1pREDocux5zijdWqBDkeN6T2tywISmBi5zqvXz8YOc1peQAd1CGOY94MilgHQ==",
+  "dgSpecHash": "OAuU3ptwXCa23JIkoui6x+AGG19OLrQbAL6ozNnUrdfQF0nzB7BPOrZVv5r26Dj8qbdlOn54a1NSA/zk5Jd2Pg==",
   "success": true,
   "projectFilePath": "/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/IdentityServerAspNetIdentity.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/Users/dhruvmathur/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/identitymodel/6.2.0/identitymodel.6.2.0.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/microsoft.aspnetcore.authentication.google/8.0.0/microsoft.aspnetcore.authentication.google.8.0.0.nupkg.sha512",
+    "/Users/dhruvmathur/.nuget/packages/microsoft.aspnetcore.authentication.microsoftaccount/8.0.3/microsoft.aspnetcore.authentication.microsoftaccount.8.0.3.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/8.0.0/microsoft.aspnetcore.authentication.openidconnect.8.0.0.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/microsoft.aspnetcore.cryptography.internal/8.0.0/microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",
     "/Users/dhruvmathur/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/8.0.0/microsoft.aspnetcore.cryptography.keyderivation.8.0.0.nupkg.sha512",

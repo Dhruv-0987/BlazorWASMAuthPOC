@@ -2,6 +2,7 @@ using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
 using IdentityServerAspNetIdentity.Data;
 using IdentityServerAspNetIdentity.Models;
+using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -57,6 +58,15 @@ internal static class HostingExtensions
                 // set the redirect URI to https://localhost:5001/signin-google
                 options.ClientId = "copy client ID from Google here";
                 options.ClientSecret = "copy client secret from Google here";
+            })
+            .AddMicrosoftAccount(options =>
+            {
+                var msOptions = builder.Configuration.GetSection(nameof(MicrosoftOptions)).Get<MicrosoftOptions>();
+                options.AuthorizationEndpoint = MicrosoftAccountDefaults.AuthorizationEndpoint + "?prompt=select_account";
+
+                options.ClientId = msOptions.ClientId;
+                options.ClientSecret = msOptions.ClientSecret;
+                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
             });
 
         return builder.Build();
