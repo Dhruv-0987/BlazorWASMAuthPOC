@@ -8,36 +8,43 @@
 
 <p>This component demonstrates fetching data from an external server.</p>
 
-@if (products == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>SubCategory</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var product in products)
-            {
+<AuthorizeView>
+    <NotAuthorized>
+        Sign In to see the data
+    </NotAuthorized>
+    <Authorized>
+        @if (products == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>@product.ProductId</td>
-                    <td>@product.ProductName</td>
-                    <td>@product.Category</td>
-                    <td>@product.SubCategory</td>
-                    <td>@product.PricePerUnit</td>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>SubCategory</th>
+                    <th>Price</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-}
+                </thead>
+                <tbody>
+                @foreach (var product in products)
+                {
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td>@product.ProductName</td>
+                        <td>@product.Category</td>
+                        <td>@product.SubCategory</td>
+                        <td>@product.PricePerUnit</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </Authorized>
+</AuthorizeView>
 
 @code {
     private List<Product> products;
