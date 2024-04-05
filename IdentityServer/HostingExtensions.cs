@@ -68,6 +68,21 @@ internal static class HostingExtensions
                 options.ClientSecret = msOptions.ClientSecret;
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
             });
+        
+        var corsOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+        
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("_AllowOriginFromBlazorWASM",
+                policy =>
+                {
+                    policy
+                        .WithOrigins(corsOrigins)
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+        });
 
         return builder.Build();
     }
@@ -81,6 +96,7 @@ internal static class HostingExtensions
             app.UseDeveloperExceptionPage();
         }
 
+        app.UseCors("_AllowOriginFromBlazorWASM");
         app.UseStaticFiles();
         app.UseRouting();
         app.UseIdentityServer();
