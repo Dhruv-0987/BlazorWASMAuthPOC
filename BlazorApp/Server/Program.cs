@@ -51,6 +51,7 @@ builder.Services.AddAuthentication(options =>
         options.Scope.Add("profile");
         options.Scope.Add("email");
         options.Scope.Add("plannr-api");
+        options.Scope.Add("recipe-api");
 
         options.CallbackPath = "/authentication/callback";
 

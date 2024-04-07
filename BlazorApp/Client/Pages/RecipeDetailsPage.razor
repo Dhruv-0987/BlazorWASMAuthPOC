@@ -1,0 +1,81 @@
+@page "/RecipeDetails/{recipeId:int}"
+@using wasmwithids.Shared
+@inject HttpClient Http
+
+<h3>RecipeDetails</h3>
+
+<AuthorizeView>
+    <NotAuthorized>
+        Sgn In to see details
+    </NotAuthorized>
+    <Authorized>
+        @if (recipeDetails == null)
+        {
+            <p>Loading...</p>
+        }
+        else
+        {
+            <div class="card">
+                @if (!string.IsNullOrEmpty(recipeDetails.ImageUrl))
+                {
+                    <img src="@recipeDetails.ImageUrl" class="card-img-top" alt="Recipe Image">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@recipeDetails.RecipeTitle</h5>
+                    <p class="card-text"><strong>Type:</strong> @recipeDetails.Type</p>
+                    <p class="card-text"><strong>Servings:</strong> @recipeDetails.Servings</p>
+                    <p class="card-text"><strong>Cost:</strong> $@recipeDetails.Cost</p>
+                    <p class="card-text"><strong>Cuisine:</strong> @recipeDetails.Cuisine</p>
+                    <p class="card-text"><strong>Energy:</strong> @recipeDetails.Energy kcal</p>
+                    <p class="card-text"><strong>Protein:</strong> @recipeDetails.Protein g</p>
+                    <p class="card-text"><strong>Carbohydrates:</strong> @recipeDetails.Carbohydrates g</p>
+                    <p class="card-text"><strong>Total Fats:</strong> @recipeDetails.TotalFats g</p>
+                    <p class="card-text"><strong>Average Rating:</strong> @recipeDetails.AverageRating / 5</p>
+                    <p class="card-text"><strong>Health Rating:</strong> @recipeDetails.HealthRating / 5</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Ingredients:</strong></li>
+                    @foreach (var ingredient in recipeDetails.Ingredients)
+                    {
+                        <li class="list-group-item">@ingredient</li>
+                    }
+                </ul>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Instructions:</h6>
+                    @foreach (var step in recipeDetails.Instructions)
+                    {
+                        <p class="card-text">@step</p>
+                    }
+                </div>
+            </div>
+        }
+    </Authorized>
+</AuthorizeView>
+
+@code {
+
+    private RecipeDetails recipeDetails;
+
+    [CascadingParameter] 
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+    
+    [Parameter]
+    public int recipeId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            var response = await Http.GetAsync($"/api/recipe/GetRecipeById/{recipeId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                recipeDetails = await response.Content.ReadFromJsonAsync<RecipeDetails>();
+            }
+        }
+    }
+
+}

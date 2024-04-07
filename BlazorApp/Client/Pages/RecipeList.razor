@@ -1,0 +1,63 @@
+@page "/recipelist"
+@using wasmwithids.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>RecipeList</h3>
+
+@if (recipeList == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var recipe in recipeList)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        @recipe.RecipeTitle
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Servings: @recipe.Servings</p>
+                        <p class="card-text">Cost: $@recipe.Cost</p>
+                        <p class="card-text">Cuisine: @recipe.Cuisine</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary" @onclick="@(() => HandleDetails(recipe.Id))">Details</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+
+    private List<Recipe> recipeList;
+
+    [CascadingParameter] 
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            var response = await Http.GetAsync("api/recipe/GetAllRecipes");
+
+            if (response.IsSuccessStatusCode)
+            {
+                recipeList = await response.Content.ReadFromJsonAsync<List<Recipe>>();
+            }
+        }
+    }
+
+    private void HandleDetails(int recipeId)
+    {
+        NavigationManager.NavigateTo($"/RecipeDetails/{recipeId}");
+    }
+}
