@@ -1,6 +1,9 @@
 ﻿@page "/fetchdata"
 @using wasmwithids.Shared
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 
 <PageTitle>Product list</PageTitle>
 
@@ -51,6 +54,21 @@
 
     protected override async Task OnInitializedAsync()
     {
-        products = await Http.GetFromJsonAsync<List<Product>>("/api/bff/products");
+        var authState = await AuthenticationStateProvider
+            .GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            var response = await Http.GetAsync("/api/product/GetAllProducts");
+            if (response.IsSuccessStatusCode)
+            {
+                products = await response.Content.ReadFromJsonAsync<List<Product>>();
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                
+            }
+        }
     }
 }
