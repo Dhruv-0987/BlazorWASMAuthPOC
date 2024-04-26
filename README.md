@@ -1,30 +1,44 @@
-# Blazor Hosted WASM App hooked up with IdentityServer.
+# Blazor Hosted WASM App with Duende IdentityServer Integration
 
 ## About
+This repository houses a Blazor Hosted WASM application integrated with Duende IdentityServer, which serves as the authentication authority using OAuth and OIDC protocols. It features:
 
-This repo contains a Blazor Hosted WASM app which has Duende IdentityServer as the authentication authority following OAuth and OIDC flows.
+- **Two Example APIs**: These APIs serve data to the Blazor app, utilizing IdentityServer for token signing to authorize requests.
+- **IdentityServer**: Serves as the central authority for authentication and authorization, managing:
+  1. **Identity Resources**: User identity information for authentication.
+  2. **API Scopes**: Scope-based access control for APIs.
+  3. **API Resources**: Metadata for APIs using IdentityServer for token signing.
 
-It also contains 2 example APIs from which the Blazor App fetches data. The APIs have IdentityServer as the signing authority for the token to auhtorize the requests from the Blazor frontend.
+The Blazor app comprises three projects:
+- **Client App**: Manages UI components.
+- **Server App**: Handles authentication, data fetching, and secure token storage.
+- **Shared App**: Contains common code utilized across the client and server apps.
 
-IdentityServer in this case acts a central authority for authentication and authorization using OIDc protocols. It protects and manages 3 types of resources:
-1. Identity Resources (Information about the user's Identity which is used to authenticate).
-2. API Scopes for scope based access for the data provided by any API.
-3. API Resources which contain information about all the APIs which use the IdentityServer as the signing authority.
+The application employs the Backend-for-Frontend (BFF) pattern, enhancing the security of authentication and authorization processes.
 
-The Blazor App has 3 projects a client application for UI components and a Server App to handle Authentication and Data Fetching and a Shared App for any common code. 
-The Server App also handles secure token storage as the token is stored on the server and not the client side or the browser.
+## Getting Started
 
-The Blazor App utilized the bff pattern to leverage the full power of the server App for secure Authentication and Authorization flows. 
+### Prerequisites
+- Docker (for Mac users)
+- HTTPS setup for the server application
 
-## F5 Experience
+### Project Structure
+- **Blazor App Solution**: Includes Client, Server, and Shared projects.
+- **Main Solution**: Contains two API projects and the IdentityServer project.
 
-This project has 2 solutions:
-1. The Blazor App Solution (Client, Server and Shared)
-2. The Main Solution which contains the 2 example API projects and the IdentityServer App.
+### Running the Demo
+1. **Configure Database Connections**:
+   - Update the local database connection strings in the IdentityServer and Blazor App configurations.
+   - For Mac users, set up Docker as required.
+   - Note: Example APIs use in-memory data for simplicity.
 
-To run the full demo
-1. Add the local db connection string in the IdentityServer and the Blazor App (Spin up docker if on a mac). The Example API has in memory data for simplicity.
-2. Open the Blazor App solution and run the Server App over Https.
-3. Open the main solution and run all 3 projects (both APIs and IdentityServer) using multiple startup projects option.
+2. **Run the Blazor App**:
+   - Open the Blazor App solution.
+   - Run the Server App over HTTPS.
 
-All data routes are protected by authentication on the Blazor App, so first Sign in through IdentityServer and then the data fetching will work using the token from the IdentityServer.
+3. **Run the Main Solution**:
+   - Open the main solution.
+   - Configure and run all three projects (both APIs and IdentityServer) using the "Multiple Startup Projects" option in Visual Studio.
+
+### Authentication and Authorization
+Ensure you are signed into the IdentityServer to access data routes in the Blazor App. Data fetching operates using tokens obtained from IdentityServer.
