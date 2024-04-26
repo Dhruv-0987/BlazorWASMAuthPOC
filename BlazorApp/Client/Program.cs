@@ -11,6 +11,7 @@ builder.Services.AddTransient<AntiForgeryHandler>();
 
 builder.Services.AddHttpClient("backend", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
     .AddHttpMessageHandler<AntiForgeryHandler>();
+    
 builder.Services.AddTransient(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("backend"));
 
 builder.Services.AddAuthorizationCore();

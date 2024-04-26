@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using wasmwithids.Server;
 using wasmwithids.Server.Services;
 using wasmwithids.Server.Yarp;
 using Yarp.ReverseProxy.Configuration;
@@ -19,7 +20,7 @@ builder.Services.AddBff();
 // pulling reverse proxy config (routes and cluster) from appsettings
 var proxyConfigOptions = builder.Configuration.GetSection("ReverseProxyConfig").Get<ProxyConfigOptions>();
 
-// registering custom implementation of the proxy config provider 
+// registering custom In memory implementation of the proxy config provider 
 builder.Services.AddSingleton<IProxyConfigProvider>(cp => new InMemoryYarpConfigProvider(proxyConfigOptions));
 
 // this will automatically get the config from the custom InMemoryYarpConfigProvider 
@@ -39,25 +40,27 @@ builder.Services.AddAuthentication(options =>
     })
     .AddOpenIdConnect("oidc", options =>
     {
-        options.Authority = "https://localhost:5001";
+        var openIdConnectOptions = builder.Configuration.GetSection(nameof(OpenIdConnectOptions)).Get<OpenIdConnectOptions>();
         
-        options.ClientId = "blazor-wasm-client";
-        options.ClientSecret = "secret";
-        options.ResponseType = "code";
-        options.ResponseMode = "query";
+        options.Authority = openIdConnectOptions.Authority;
+        
+        options.ClientId = openIdConnectOptions.ClientId;
+        options.ClientSecret = openIdConnectOptions.ClientSecret;
+        options.ResponseType = openIdConnectOptions.ResponseType;
+        options.ResponseMode = openIdConnectOptions.ResponseMode;
 
         options.Scope.Clear();
-        options.Scope.Add("openid");
-        options.Scope.Add("profile");
-        options.Scope.Add("email");
-        options.Scope.Add("plannr-api");
-        options.Scope.Add("recipe-api");
+        
+        foreach (var scope in openIdConnectOptions.Scope)
+        {
+            options.Scope.Add(scope);
+        }
 
-        options.CallbackPath = "/authentication/callback";
+        options.CallbackPath = openIdConnectOptions.CallbackPath;
 
-        options.MapInboundClaims = false;
-        options.GetClaimsFromUserInfoEndpoint = true;
-        options.SaveTokens = true;
+        options.MapInboundClaims = openIdConnectOptions.MapInboundClaims;
+        options.GetClaimsFromUserInfoEndpoint = openIdConnectOptions.GetClaimsFromUserInfoEndpoint;
+        options.SaveTokens = openIdConnectOptions.SaveTokens;
     });
 
 

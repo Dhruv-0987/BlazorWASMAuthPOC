@@ -64,8 +64,8 @@ internal static class HostingExtensions
                 var msOptions = builder.Configuration.GetSection(nameof(MicrosoftOptions)).Get<MicrosoftOptions>();
                 options.AuthorizationEndpoint = MicrosoftAccountDefaults.AuthorizationEndpoint + "?prompt=select_account";
 
-                options.ClientId = msOptions.ClientId;
-                options.ClientSecret = msOptions.ClientSecret;
+                options.ClientId = msOptions.ClientId != "" ? msOptions.ClientId : "wrong_value";
+                options.ClientSecret = msOptions.ClientSecret != "" ? msOptions.ClientSecret : "wrong_secret";
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
             });
         
