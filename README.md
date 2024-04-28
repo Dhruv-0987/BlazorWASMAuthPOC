@@ -37,7 +37,7 @@ The application employs the Backend-for-Frontend (BFF) pattern, enhancing the se
    - Run the Server App over HTTPS.
 
 3. **Run the Main Solution**:
-   - Open the main solution.
+   - Open the main solution (BlazorIDSPOC.sln).
    - Configure and run all three projects (both APIs and IdentityServer) using the "Multiple Startup Projects" option in Visual Studio.
 
 ### Authentication and Authorization
