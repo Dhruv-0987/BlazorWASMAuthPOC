@@ -16,6 +16,8 @@ The Blazor app comprises three projects:
 
 The application employs the Backend-for-Frontend (BFF) pattern, enhancing the security of authentication and authorization processes.
 
+![image](https://github.com/Dhruv-0987/BlazorWASMAuthPOC/assets/69164713/c2adf476-a2d4-49ca-9b5b-bcfedaed4919)
+
 ## Getting Started
 
 ### Prerequisites
