@@ -42,7 +42,7 @@ builder.Services.AddAuthentication(options =>
     {
         var openIdConnectOptions = builder.Configuration.GetSection(nameof(OpenIdConnectOptions)).Get<OpenIdConnectOptions>();
         
-        options.Authority = openIdConnectOptions.Authority;
+        options.Authority = openIdConnectOptions!.Authority;
         
         options.ClientId = openIdConnectOptions.ClientId;
         options.ClientSecret = openIdConnectOptions.ClientSecret;

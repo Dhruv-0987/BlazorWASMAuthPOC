@@ -77,7 +77,7 @@ internal static class HostingExtensions
                 policy =>
                 {
                     policy
-                        .WithOrigins(corsOrigins)
+                        .WithOrigins(corsOrigins!)
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyHeader()
                         .AllowAnyMethod();

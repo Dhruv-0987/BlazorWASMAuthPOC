@@ -12,6 +12,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Api2", "POC.Api2\POC.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerAspNetIdentity", "IdentityServer\IdentityServerAspNetIdentity.csproj", "{09C37365-93DC-4C39-815A-8E289B82FDAE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorApp", "BlazorApp", "{D4A0778C-2352-46A4-9285-DCD473A8A7EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wasmwithids.Client", "BlazorApp\Client\wasmwithids.Client.csproj", "{03CC8B2B-CC26-478D-831B-D7A0D175F9D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wasmwithids.Server", "BlazorApp\Server\wasmwithids.Server.csproj", "{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wasmwithids.Shared", "BlazorApp\Shared\wasmwithids.Shared.csproj", "{D44C13DC-C384-470E-8044-3D25AC20B84E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +46,18 @@ Global
 		{09C37365-93DC-4C39-815A-8E289B82FDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C37365-93DC-4C39-815A-8E289B82FDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C37365-93DC-4C39-815A-8E289B82FDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CC8B2B-CC26-478D-831B-D7A0D175F9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CC8B2B-CC26-478D-831B-D7A0D175F9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CC8B2B-CC26-478D-831B-D7A0D175F9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CC8B2B-CC26-478D-831B-D7A0D175F9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44C13DC-C384-470E-8044-3D25AC20B84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44C13DC-C384-470E-8044-3D25AC20B84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44C13DC-C384-470E-8044-3D25AC20B84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44C13DC-C384-470E-8044-3D25AC20B84E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +66,8 @@ Global
 		SolutionGuid = {B203A24D-EA9A-4E2F-BB46-0DD4E2518B19}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{03CC8B2B-CC26-478D-831B-D7A0D175F9D6} = {D4A0778C-2352-46A4-9285-DCD473A8A7EF}
+		{78A4B3FB-01A6-426B-9679-B0FFCECC7FAC} = {D4A0778C-2352-46A4-9285-DCD473A8A7EF}
+		{D44C13DC-C384-470E-8044-3D25AC20B84E} = {D4A0778C-2352-46A4-9285-DCD473A8A7EF}
 	EndGlobalSection
 EndGlobal
