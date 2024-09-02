@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>99559a3a-6a27-49f6-b7c9-5c0a3be4cd38</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.0-preview.5.24201.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorApp\Server\wasmwithids.Server.csproj" />
+    <ProjectReference Include="..\IdentityServer\IdentityServerAspNetIdentity.csproj" />
+    <ProjectReference Include="..\POC.Api2\POC.Api2.csproj" />
+    <ProjectReference Include="..\POC.Api\POC.Api\POC.Api.csproj" />
+  </ItemGroup>
+
+</Project>

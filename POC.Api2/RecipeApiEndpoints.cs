@@ -105,7 +105,7 @@ public static class RecipeApiEndpoints
             }).ToList();
 
             return Results.Ok(recipes);
-        }).RequireAuthorization();
+        });
         
         app.MapGet("/api/recipe/GetRecipeById/{id:int}", (int id) =>
         {

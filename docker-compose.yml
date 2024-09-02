@@ -1,0 +1,41 @@
+name: blazor-ids-auth-poc
+
+services:
+  sql:
+    container_name: blazor-ids-auth-sql
+    hostname: blazor-ids-auth-sql
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      - SA_PASSWORD=P@ssw0rd
+      - ACCEPT_EULA=Y
+      - MSSQL_DATA_DIR=/var/opt/mssql/data
+      - MSSQL_LOG_DIR=/var/opt/mssql/log
+      - MSSQL_BACKUP_DIR=/var/opt/mssql/backup
+    ports:
+      - "2100:1433"
+    volumes:
+      - blazor-ids-auth-sql:/var/opt/mssql
+        
+  smtp4dev:
+    container_name: smtp-server
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      - '2101:80'
+      - '2102:25'
+    volumes:
+      - smtp4dev-data:/smtp4dev
+    environment:
+      - ServerOptions__Urls=http://*:80
+      - ServerOptions__HostName=localhost
+      - ServerOptions__AuthenticationRequired=true
+      - ServerOptions__SmtpAllowAnyCredentials=false
+      - ServerOptions__WebAuthenticationRequired=true
+      - ServerOptions__Users__0__Username=local-dev
+      - ServerOptions__Users__0__Password=Password!2
+  
+volumes:
+  blazor-ids-auth-sql:
+    driver: local
+  smtp4dev-data:
+    driver: local

@@ -351,7 +351,6 @@
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.IdentityServerAspNetIdentity.props
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/scopedcss/bundle/IdentityServerAspNetIdentity.styles.css
-/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/IdentityServerAspNetIdentity.csproj.CopyComplete
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/IdentityServerAspNetIdentity.dll
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/refint/IdentityServerAspNetIdentity.dll
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/IdentityServerAspNetIdentity.pdb
@@ -359,3 +358,4 @@
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/ref/IdentityServerAspNetIdentity.dll
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/keys/is-signing-key-4B6860D227456D7A8D66DD8B6B7D54D8.json
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/Identity.5E177654.Up2Date

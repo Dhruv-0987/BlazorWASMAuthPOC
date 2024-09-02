@@ -1,17 +1,21 @@
 // Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
+using System.Text;
+using Authsignal;
 using Duende.IdentityServer;
 using Duende.IdentityServer.Events;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
 using IdentityServerAspNetIdentity.Models;
+using IdentityServerAspNetIdentity.Pages.Account.Login;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Options;
 
 namespace IdentityServerAspNetIdentity.Pages.Login;
 
@@ -21,6 +25,8 @@ public class Index : PageModel
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly IAuthsignalClient _authSignalClient;
+    private readonly List<CustomClient> _clients;
     private readonly IIdentityServerInteractionService _interaction;
     private readonly IEventService _events;
     private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -37,10 +43,14 @@ public class Index : PageModel
         IIdentityProviderStore identityProviderStore,
         IEventService events,
         UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager)
+        SignInManager<ApplicationUser> signInManager,
+        IOptions<List<CustomClient>> clients,
+        IAuthsignalClient authSignalClient)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _authSignalClient = authSignalClient;
+        _clients = clients.Value;
         _interaction = interaction;
         _schemeProvider = schemeProvider;
         _identityProviderStore = identityProviderStore;
@@ -101,6 +111,31 @@ public class Index : PageModel
             if (result.Succeeded)
             {
                 var user = await _userManager.FindByNameAsync(Input.Username!);
+                
+                // add the MFA challenge here if you have MFA enabled
+                var clientHas2Fa = _clients.Find(c => c.ClientId == context?.Client.ClientId)?.Requires2Fa == true;
+
+                if (clientHas2Fa && user is not null)
+                {
+                    var encodedReturnUrl = Convert.ToBase64String(Encoding.UTF8.GetBytes(Input.ReturnUrl!));
+                    
+                    // this url can be managed better in const somewhere
+                    var redirectUrl = "https://localhost:5001/Account/Login/Callback?returnUrl=" + encodedReturnUrl;
+
+                    var trackRequest = new TrackRequest(
+                        UserId: user.Id,
+                        Username: user.UserName,
+                        Action: "identity-server-login",
+                        RedirectUrl: redirectUrl);
+
+                    var trackResponse = await _authSignalClient.Track(trackRequest);
+
+                    if (!trackResponse.IsEnrolled || trackResponse.State is UserActionState.CHALLENGE_REQUIRED)
+                    {
+                        return Redirect(trackResponse.Url);
+                    }
+                }
+
                 await _events.RaiseAsync(new UserLoginSuccessEvent(user!.UserName, user.Id, user.UserName, clientId: context?.Client.ClientId));
                 Telemetry.Metrics.UserLogin(context?.Client.ClientId, IdentityServerConstants.LocalIdentityProvider);
 

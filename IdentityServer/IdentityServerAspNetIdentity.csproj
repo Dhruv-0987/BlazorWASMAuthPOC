@@ -4,9 +4,11 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<UserSecretsId>bc7358d2-adbb-4592-bb2d-67399b1c687e</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Authsignal.Server.Client" Version="1.14.0" />
 		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.0" />
 
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.0" />
