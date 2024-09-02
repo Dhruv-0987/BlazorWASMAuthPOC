@@ -25,22 +25,20 @@ The application employs the Backend-for-Frontend (BFF) pattern, enhancing the se
 - HTTPS setup for the server application
 
 ### Project Structure
-- **Blazor App Solution**: Includes Client, Server, and Shared projects.
-- **Main Solution**: Contains two API projects and the IdentityServer project.
+The solution BlazorIDSPOC contains the following projects:
+- The Blazor hosted app (client, server and shared)
+- IdentityServer app
+- 2 example APIs
+- An Aspire App Host project
+- An Aspire service defaults
 
-### Running the Demo
-1. **Configure Database Connections**:
-   - Update the local database connection strings in the IdentityServer and Blazor App configurations.
-   - For Mac users, set up Docker as required.
-   - Note: Example APIs use in-memory data for simplicity.
+### F5 experience
 
-2. **Run the Blazor App**:
-   - Open the Blazor App solution.
-   - Run the Server App over HTTPS.
+This app used the .NET 8 aspire App Host.
 
-3. **Run the Main Solution**:
-   - Open the main solution (BlazorIDSPOC.sln).
-   - Configure and run all three projects (both APIs and IdentityServer) using the "Multiple Startup Projects" option in Visual Studio.
+To run all projects locally just run the AppHost aspire project which will automatically run all the projects for you.
+
+Note: just make sure docker is running for the SQL edge server.
 
 ### Authentication and Authorization
 Ensure you are signed into the IdentityServer to access data routes in the Blazor App. Data fetching operates using tokens obtained from IdentityServer.
