@@ -356,6 +356,7 @@
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/IdentityServerAspNetIdentity.pdb
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/IdentityServerAspNetIdentity.genruntimeconfig.cache
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/ref/IdentityServerAspNetIdentity.dll
-/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/keys/is-signing-key-4B6860D227456D7A8D66DD8B6B7D54D8.json
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
 /Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/obj/Debug/net8.0/Identity.5E177654.Up2Date
+/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/authsignal-dotnet.dll
+/Users/dhruvmathur/personal projects/BlazorIDSPOC/IdentityServer/bin/Debug/net8.0/keys/is-signing-key-0481CF9977B7117649530DC909D36EFB.json
