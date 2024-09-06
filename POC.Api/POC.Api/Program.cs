@@ -1,7 +1,13 @@
+using Contracts;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using POC.Api;
+using POC.Api.Consumers;
+using POC.Api.Database;
 using POC.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +47,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddDbContext<ProductDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 // configure IdentityServer as the token authority
 var identityServerSettings = builder.Configuration.GetSection("IdentityServer").Get<IdentityServerSettings>();
 
@@ -62,6 +73,31 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 builder.Services.AddCors();
+
+builder.Services.AddOptions<RabbitMqOptions>()
+    .BindConfiguration(nameof(RabbitMqOptions))
+    .ValidateOnStart();
+
+var rabbitMqOptions = builder.Services.BuildServiceProvider()
+    .GetRequiredService<IOptions<RabbitMqOptions>>().Value;
+
+builder.Services.AddMassTransit(configurator =>
+{
+    configurator.SetKebabCaseEndpointNameFormatter();
+
+    configurator.AddConsumer<CreateProductConsumer>();
+
+    configurator.UsingRabbitMq((busFactoryContext, busFactoryConfigurator) =>
+    {
+        busFactoryConfigurator.Host(new Uri($"amqp://{rabbitMqOptions!.HostName}"), hostingOptions =>
+        {
+            hostingOptions.Username(rabbitMqOptions.UserName);
+            hostingOptions.Password(rabbitMqOptions.Password);
+        });
+
+        busFactoryConfigurator.ConfigureEndpoints(busFactoryContext);
+    });
+});
 
 var app = builder.Build();
 

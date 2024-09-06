@@ -33,6 +33,19 @@ services:
       - ServerOptions__WebAuthenticationRequired=true
       - ServerOptions__Users__0__Username=local-dev
       - ServerOptions__Users__0__Password=Password!2
+        
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: RabbitMq
+    ports:
+      - "5672:5672"  # AMQP port
+      - "15672:15672"  # Management UI port
+    volumes:
+      - ./.containers/queue/data/:/var/lib/rabbitmq
+      - ./.containers/queue/log/:/var/log/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
   
 volumes:
   blazor-ids-auth-sql:
